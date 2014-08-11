@@ -1,0 +1,23 @@
+{
+    "name": "cssjs",
+    "version": "0.0.1",
+    "description": "Load or remove css link node.",
+    "main": "dist/$css.min.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/up9cloud/css.js.git"
+    },
+    "author": "up9cloud",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/up9cloud/css.js/issues"
+    },
+    "devDependencies": {
+        "grunt": "^0.4.5",
+        "grunt-contrib-uglify": "*",
+        "grunt-contrib-concat": "*"
+    }
+}
