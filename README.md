@@ -8,28 +8,28 @@ inspired from [$script]
 #Usage
 
 load one css
-```
+```js
 $css(['bootstrap.css'])
 ```
 
 load two css
-```
+```js
 $css(['bootstrap.css', 'another-bootstrap.css'])
 ```
 
 load css and set a attribute "alias"
-```
+```js
 $css(['bootstrap.css', 'another-bootstrap.css'],'bootstrap')
 //<link rel="stylesheet" href="css/bootstrap.min.css" alias="bootstrap">
 ```
 
 remove link by url
-```
+```js
 $css.remove(['bootstrap.css', 'another-bootstrap.css'])
 ```
 
 remove link by alias
-```
+```js
 $css.remove(['alias1', 'alias2'])
 ```
 

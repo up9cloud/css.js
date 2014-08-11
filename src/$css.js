@@ -37,6 +37,9 @@
                     node = doc.querySelector('link[href="' + elm + '"]');
                 } else {
                     node = doc.querySelector('link[alias="' + elm + '"]');
+                    if (!node) {
+                        node = doc.querySelector('link[href="' + elm + '"]');
+                    }
                 }
             } while (node);
         })
