@@ -1,7 +1,7 @@
 $css.js
 ======
 
-Load or remove css link node.
+Create or remove css link node.
 
 inspired from [$script]
 
@@ -13,28 +13,33 @@ wget 'https://raw.githubusercontent.com/up9cloud/css.js/master/dist/$css.min.js'
 
 #Usage
 
-load one css
+Create a css link.
 ```js
 $css('bootstrap.css')
+//<link rel="stylesheet" href="bootstrap.min.css">
 ```
 
-load two css
+Create css links more than one.
 ```js
 $css(['bootstrap.css', 'another-bootstrap.css'])
+//<link rel="stylesheet" href="bootstrap.min.css">
+//<link rel="stylesheet" href="another-bootstrap.css">
 ```
 
-load css and set a attribute "alias" for remove.
+Create css links and set the attribute "alias"(for remove).
 ```js
 $css(['bootstrap.css', 'another-bootstrap.css'],'bootstrap')
-//<link rel="stylesheet" href="css/bootstrap.min.css" alias="bootstrap">
+//will add this two links.
+//<link rel="stylesheet" href="bootstrap.min.css" alias="bootstrap">
+//<link rel="stylesheet" href="another-bootstrap.css" alias="bootstrap">
 ```
 
-remove link by url
+Remove the links have href=?
 ```js
 $css.remove(['bootstrap.css', 'another-bootstrap.css'])
 ```
 
-remove link by alias
+Remove the links have alias=?
 ```js
 $css.remove(['alias1', 'alias2'])
 ```
