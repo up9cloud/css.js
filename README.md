@@ -5,11 +5,17 @@ Load or remove css link node.
 
 inspired from [$script]
 
+#Download
+
+```sh
+wget https://raw.githubusercontent.com/up9cloud/css.js/master/dist/$css.min.js
+```
+
 #Usage
 
 load one css
 ```js
-$css(['bootstrap.css'])
+$css('bootstrap.css')
 ```
 
 load two css
@@ -17,7 +23,7 @@ load two css
 $css(['bootstrap.css', 'another-bootstrap.css'])
 ```
 
-load css and set a attribute "alias"
+load css and set a attribute "alias" for remove.
 ```js
 $css(['bootstrap.css', 'another-bootstrap.css'],'bootstrap')
 //<link rel="stylesheet" href="css/bootstrap.min.css" alias="bootstrap">
