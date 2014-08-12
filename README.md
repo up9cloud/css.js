@@ -8,7 +8,7 @@ inspired from [$script]
 #Download
 
 ```sh
-wget https://raw.githubusercontent.com/up9cloud/css.js/master/dist/$css.min.js
+wget 'https://raw.githubusercontent.com/up9cloud/css.js/master/dist/$css.min.js'
 ```
 
 #Usage
