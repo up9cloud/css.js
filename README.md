@@ -3,7 +3,9 @@ $css.js
 
 Create or remove css link node.
 
-inspired from [$script]
+Influenced by [$script]
+
+To ensure css link is load from [this][when css loaded]
 
 #Download
 
@@ -26,22 +28,24 @@ $css(['bootstrap.css', 'another-bootstrap.css'])
 //<link rel="stylesheet" href="another-bootstrap.css">
 ```
 
-Create css links and set the attribute "alias"(for remove).
-```js
-$css(['bootstrap.css', 'another-bootstrap.css'],'bootstrap')
-//will add this two links.
-//<link rel="stylesheet" href="bootstrap.min.css" alias="bootstrap">
-//<link rel="stylesheet" href="another-bootstrap.css" alias="bootstrap">
-```
-
 Remove the links have href=?
 ```js
 $css.remove(['bootstrap.css', 'another-bootstrap.css'])
 ```
 
-Remove the links have alias=?
-```js
-$css.remove(['alias1', 'alias2'])
+#Development
+
+need to install [nodejs] and npm first.
+```
+clone https://github.com/up9cloud/css.js.git
+npm install
+```
+
+##test
+```
+karma start
 ```
 
 [$script]:https://github.com/ded/script.js
+[when css loaded]:http://www.phpied.com/when-is-a-stylesheet-really-loaded/
+[nodejs]:http://nodejs.org/

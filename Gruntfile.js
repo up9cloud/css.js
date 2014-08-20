@@ -3,17 +3,10 @@ module.exports = function(grunt) {
 
   // Project configuration.
     grunt.initConfig({
-        // Metadata.
-        meta: {
-            project:'$css.js'
-            ,url:'https://github.com/up9cloud/css.js'
-            ,author:'up9cloud'
-            ,license:'MIT'
-        },
-        banner: '/*! <%= meta.project %> CSS loader\n' +
-                ' * <%= grunt.template.today("yyyy-mm-dd") %>\n' +
-                ' * <%= meta.url %>\n' +
-                ' * <%= meta.author %> | Licensed <%= meta.license %> */\n',
+        package: grunt.file.readJSON('package.json'),
+        banner: '/*! <%= package.name %> - v<%= package.version %> - <%= grunt.template.today("yyyy-mm-dd") %>\n' +
+                '* http://<%= package.repository.url %>/\n' +
+                '* Copyright (c) 2013-<%= grunt.template.today("yyyy") %> <%= package.author %>; Licensed <%= package.license %> */\n',
         // Task configuration.
         concat: {
             options: {
@@ -34,14 +27,22 @@ module.exports = function(grunt) {
                     '<%= concat.dist.dest %>': ['<%= concat.dist.dest %>']
                 }
             }
+        },
+        watch: {
+            js: {
+                files: '<%= concat.dist.src %>',
+                tasks: ['minify'],
+            },
         }
     });
 
     // These plugins provide necessary tasks.
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-uglify');
+    grunt.loadNpmTasks('grunt-contrib-watch');
 
     // Default task.
-    grunt.registerTask('default', [ 'concat', 'uglify']);
+    grunt.registerTask('default', [ 'concat', 'uglify', 'watch']);
+    grunt.registerTask('minify', [ 'concat', 'uglify']);
 
 };
