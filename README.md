@@ -5,8 +5,6 @@ Create or remove css link node.
 
 Influenced by [$script]
 
-To ensure css link is load from [this][when css loaded]
-
 #Download
 
 ```sh
@@ -33,6 +31,13 @@ Remove the links have href=?
 $css.remove(['bootstrap.css', 'another-bootstrap.css'])
 ```
 
+Callback
+```js
+$css('bootstrap.css',function(){
+    //do something after css loaded.
+})
+```
+
 #Development
 
 need to install [nodejs] and npm first.
@@ -41,10 +46,15 @@ clone https://github.com/up9cloud/css.js.git
 npm install
 ```
 
-##test
+##Test
 ```
 karma start
 ```
+
+##Browser versions?
+
+[To ensure css link is load ][when css loaded]
+
 
 [$script]:https://github.com/ded/script.js
 [when css loaded]:http://www.phpied.com/when-is-a-stylesheet-really-loaded/
