@@ -4,7 +4,8 @@
   "description": "Load or remove css link node.",
   "main": "dist/$css.min.js",
   "scripts": {
-    "test": "karma start"
+    "test": "karma start",
+    "build": "grunt"
   },
   "repository": {
     "type": "git",

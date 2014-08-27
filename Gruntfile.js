@@ -42,7 +42,8 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-watch');
 
     // Default task.
-    grunt.registerTask('default', [ 'concat', 'uglify', 'watch']);
+    grunt.registerTask('default', [ 'minify']);
+    grunt.registerTask('dev', [ 'minify', 'watch']);
     grunt.registerTask('minify', [ 'concat', 'uglify']);
 
 };

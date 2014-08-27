@@ -40,10 +40,15 @@ $css('bootstrap.css',function(){
 
 #Development
 
-need to install [nodejs] and npm first.
+- install [nodejs] and npm first.
 ```
 clone https://github.com/up9cloud/css.js.git
-npm install
+cd css.js && npm install
+```
+
+- watch file
+```
+grunt dev
 ```
 
 ##Test
@@ -51,9 +56,9 @@ npm install
 karma start
 ```
 
-##Browser versions?
+##Different browsers?
 
-[To ensure css link is load ][when css loaded]
+[To ensure css link is loaded][when css loaded]
 
 
 [$script]:https://github.com/ded/script.js
