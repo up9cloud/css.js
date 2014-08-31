@@ -58,7 +58,7 @@
         elm.onload = callback;
         pos.insertBefore(elm, pos.lastChild)
     }
-    var remove = function(urls) {
+    var remove = function(urls, callback) {
         var node;
         urls = urls['push'] ? urls : [urls];
         urls.forEach(function(val) {
@@ -70,6 +70,9 @@
                 node = doc.querySelector('link[href="' + val + '"]');
             } while (node);
         })
+        if (callback) {
+            return callback();
+        }
     }
     $css.create = create;
     $css.remove = remove;

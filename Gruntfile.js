@@ -28,10 +28,30 @@ module.exports = function(grunt) {
                 }
             }
         },
+        copy: {
+            cssjs:{
+                files: [
+                    {expand: true, cwd: 'dist/', src: ['**'], dest: 'demo/'}
+                ]
+            }
+        },
+        htmlmin: {                                     // Task
+            dist: {                                      // Target
+                options: {                                 // Target options
+                    removeComments: true,
+                    collapseWhitespace: true,
+                    minifyJS:true,
+                    minifyCSS:true
+                },
+                files: {
+                    'demo/index.html': 'src/demo.html'
+                }
+            }
+        },
         watch: {
             js: {
                 files: '<%= concat.dist.src %>',
-                tasks: ['minify'],
+                tasks: ['build'],
             },
         }
     });
@@ -40,10 +60,13 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.loadNpmTasks('grunt-contrib-htmlmin');
+    grunt.loadNpmTasks('grunt-contrib-copy');
 
     // Default task.
-    grunt.registerTask('default', [ 'minify']);
-    grunt.registerTask('dev', [ 'minify', 'watch']);
-    grunt.registerTask('minify', [ 'concat', 'uglify']);
+    grunt.registerTask('default', [ 'build']);
+    grunt.registerTask('dev', [ 'build', 'watch']);
+    grunt.registerTask('build', [ 'minifyJS','htmlmin','copy']);
+    grunt.registerTask('minifyJS', [ 'concat', 'uglify']);
 
 };
