@@ -5,6 +5,9 @@ Create or remove css link node.
 
 Influenced by [$script]
 
+
+#[Live demo][demo]
+
 #Download
 
 ```sh
@@ -61,6 +64,7 @@ karma start
 [To ensure css link is loaded][when css loaded]
 
 
+[demo]:htts://demo.up9cloud.net/css.js/
 [$script]:https://github.com/ded/script.js
 [when css loaded]:http://www.phpied.com/when-is-a-stylesheet-really-loaded/
 [nodejs]:http://nodejs.org/
